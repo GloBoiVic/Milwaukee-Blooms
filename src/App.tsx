@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { SunIcon, MoonIcon } from '@radix-ui/react-icons';
 
 import NavBar from './components/Navbar';
@@ -23,7 +23,7 @@ function App() {
   //   } else {
   //     setTheme('light');
   //   }
-  // }, [theme, setTheme]);
+  // }, []);
 
   function handleThemeSwitch() {
     if (theme === 'dark') {
