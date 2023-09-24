@@ -62,27 +62,29 @@ export default function NavBar() {
     </ul>
   );
   return (
-    <nav className="container px-4 py-2 mx-auto border-2 border-lime-400 lg:px-8 lg:py-4">
-      <div className="container flex items-center justify-between mx-auto">
-        <h1 className="text-xl tracking-tight font-semi-bold scroll-m-20 lg:text-3xl">Milwaukee Blooms</h1>
-        <div className="hidden lg:block">{navList}</div>
-        {openNav ? (
-          <Cross1Icon
-            className="w-6 h-6 ml-auto cursor-pointer text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-            onClick={() => setOpenNav(!openNav)}
-          />
-        ) : (
-          <HamburgerMenuIcon
-            className="w-6 h-6 ml-auto cursor-pointer text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-            onClick={() => setOpenNav(!openNav)}
-          />
+    <nav className="px-4 py-2 lg:px-8 lg:py-4">
+      <div className="container">
+        <div className="flex items-center justify-between">
+          <h1 className="text-xl tracking-tight font-semi-bold scroll-m-20 lg:text-3xl">Milwaukee Blooms</h1>
+          <div className="hidden lg:block">{navList}</div>
+          {openNav ? (
+            <Cross1Icon
+              className="w-6 h-6 ml-auto cursor-pointer text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+              onClick={() => setOpenNav(!openNav)}
+            />
+          ) : (
+            <HamburgerMenuIcon
+              className="w-6 h-6 ml-auto cursor-pointer text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+              onClick={() => setOpenNav(!openNav)}
+            />
+          )}
+        </div>
+        {openNav && (
+          <div>
+            <div className="container mx-auto">{navList}</div>
+          </div>
         )}
       </div>
-      {openNav && (
-        <div>
-          <div className="container mx-auto">{navList}</div>
-        </div>
-      )}
     </nav>
   );
 }
