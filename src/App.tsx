@@ -2,13 +2,12 @@ import { useEffect, useState } from 'react';
 import { SunIcon, MoonIcon } from '@radix-ui/react-icons';
 
 import NavBar from './components/Navbar';
-import Hero from './Components/Hero';
+import Hero from './components/Hero';
 import Contact from './components/Contact';
-// import Contact from './Components/Contact';
-// import About from './Components/About';
-// import Gallery from './Components/Gallery';
-// import Reviews from './Components/Reviews';
-// import Footer from './Components/Footer';
+import About from './components/About';
+import Gallery from './components/Gallery';
+import Reviews from './components/Reviews';
+import Footer from './components/Footer';
 
 // type ColorSchemeType = {
 //   theme: string;
@@ -59,13 +58,10 @@ function App() {
       )}
       <Hero />
       <Contact />
-
-      {/* <Hero />
-      <Contact />
       <About />
       <Gallery />
       <Reviews />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }

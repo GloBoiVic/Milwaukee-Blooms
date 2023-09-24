@@ -64,7 +64,7 @@ export default function NavBar() {
   return (
     <nav className="container px-4 py-2 mx-auto border-2 border-lime-400 lg:px-8 lg:py-4">
       <div className="container flex items-center justify-between mx-auto">
-        <h1 className="mr-4 cursor-pointer py-1.5 font-medium">Milwaukee Blooms</h1>
+        <h1 className="text-xl tracking-tight font-semi-bold scroll-m-20 lg:text-3xl">Milwaukee Blooms</h1>
         <div className="hidden lg:block">{navList}</div>
         {openNav ? (
           <Cross1Icon
