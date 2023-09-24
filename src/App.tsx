@@ -25,17 +25,19 @@ function App() {
   //   }
   // }, [theme, setTheme]);
 
-  useEffect(() => {
+  function handleThemeSwitch() {
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
+      setTheme('light');
       document.documentElement.classList.remove('dark');
+    } else {
+      setTheme('dark');
+      document.documentElement.classList.add('dark');
     }
-  }, [theme]);
+  }
 
-  const handleThemeSwitch = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
+  // const handleThemeSwitch = () => {
+  //   setTheme(theme === 'dark' ? 'light' : 'dark');
+  // };
 
   return (
     <div className="relative max-w-full min-h-screen leading-loose text-gray-950 dark:text-stone-50 bg-stone-50 dark:bg-gray-950">
@@ -44,7 +46,7 @@ function App() {
         <MoonIcon
           width={30}
           height={30}
-          className="absolute top-7 right-[5rem] md:right-[50vh]"
+          className="absolute top-7 right-[5rem] md:right-[50vh] cursor-pointer"
           onClick={handleThemeSwitch}
         />
       ) : (
@@ -52,7 +54,7 @@ function App() {
           width={30}
           height={30}
           color="yellow"
-          className="absolute top-7 right-[5rem] md:right-[50vh]"
+          className="absolute top-7 right-[5rem] md:right-[50vh] cursor-pointer"
           onClick={handleThemeSwitch}
         />
       )}
