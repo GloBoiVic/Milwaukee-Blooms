@@ -1,4 +1,4 @@
-export default function Contact() {
+function Contact() {
   return (
     <section className="container bg-white h-[70vh] px-4 py-2 mx-auto lg:px-8 lg:py-4">
       <div className="flex flex-col items-center justify-center h-full text-center sm:flex-row">
@@ -58,3 +58,5 @@ export default function Contact() {
     </section>
   );
 }
+
+export default Contact;

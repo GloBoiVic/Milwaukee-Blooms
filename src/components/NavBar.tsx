@@ -1,7 +1,7 @@
 import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { useState, useEffect } from 'react';
 
-const components: { title: string; href: string }[] = [
+const navLinks = [
   {
     title: 'Home',
     href: '/home',
@@ -25,7 +25,7 @@ const components: { title: string; href: string }[] = [
   },
 ];
 
-export default function NavBar() {
+function NavBar() {
   const [openNav, setOpenNav] = useState(false);
 
   useEffect(() => {
@@ -34,31 +34,13 @@ export default function NavBar() {
 
   const navList = (
     <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <li className="p-1 font-normal">
-        <a href="#" className="flex items-center">
-          Home
-        </a>
-      </li>
-      <li className="p-1 font-normal">
-        <a href="#" className="flex items-center">
-          Contact
-        </a>
-      </li>
-      <li className="p-1 font-normal">
-        <a href="#" className="flex items-center">
-          About
-        </a>
-      </li>
-      <li className="p-1 font-normal">
-        <a href="#" className="flex items-center">
-          Gallery
-        </a>
-      </li>
-      <li className="p-1 font-normal">
-        <a href="#" className="flex items-center">
-          Reviews
-        </a>
-      </li>
+      {navLinks.map((link, id) => (
+        <li className="p-1 font-normal" key={id}>
+          <a href={link.href} className="flex items-center">
+            {link.title}
+          </a>
+        </li>
+      ))}
     </ul>
   );
   return (
@@ -88,3 +70,5 @@ export default function NavBar() {
     </nav>
   );
 }
+
+export default NavBar;
